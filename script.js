@@ -1,22 +1,23 @@
-// Busca simples no index: filtra os cards conforme o texto digitado
+// Pesquisa de componentes na página inicial.
 const searchInput = document.getElementById('searchInput');
 
 if (searchInput) {
   searchInput.addEventListener('input', () => {
-    const q = searchInput.value.toLowerCase();
-    document.querySelectorAll('.card').forEach(el => {
-      const title = el.querySelector('h3')?.innerText.toLowerCase() || '';
-      el.style.display = title.includes(q) ? '' : 'none';
+    const query = searchInput.value.trim().toLocaleLowerCase('pt-BR');
+    document.querySelectorAll('.card').forEach((card) => {
+      const title = card.querySelector('h3')?.textContent.toLocaleLowerCase('pt-BR') || '';
+      const description = card.querySelector('p')?.textContent.toLocaleLowerCase('pt-BR') || '';
+      card.hidden = !title.includes(query) && !description.includes(query);
     });
   });
 }
 
-// Formulário de contato (simulação local)
-const form = document.getElementById('contactForm');
-
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Mensagem enviada com sucesso! (simulação local)');
-    form.reset();
+// O formulário é demonstrativo: não envia mensagens para um servidor.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Mensagem validada! Este formulário é apenas uma demonstração e ainda não envia emails.');
+    contactForm.reset();
   });
+}
