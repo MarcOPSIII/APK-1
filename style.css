@@ -1,0 +1,15 @@
+/* style.css — tema gamer */
+* { box-sizing: border-box; }
+body {
+margin: 0; font-family: Inter, Arial, sans-serif; color: #ffffff;
+background: linear-gradient(180deg,#071028 0%, #0f1a2b 100%);
+background-image: url("img/fundo.jpg");
+background-size: cover; background-attachment: fixed; background-position: center;
+}
+
+
+.topbar{ display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:rgba(0,0,0,0.6); backdrop-filter: blur(6px); position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(0,255,234,0.06); }
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ width:44px; height:44px; object-fit:cover; border-radius:8px; }
+.main-nav a{color:#ffffff; text-decoration:none; margin:0 10px; font-weight:600; }
+main-nav a:hover{co}
